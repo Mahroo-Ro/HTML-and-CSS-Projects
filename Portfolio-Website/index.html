@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahroo's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Mahroo<span>.Dev</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Mahroo</span></h1>
+            <p>Front-End Developer | HTML & CSS Specialist</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-card">
+            <p>
+                Welcome to my portfolio! I build responsive, clean, and user-friendly web pages. 
+                I have a strong foundation in modern HTML5, CSS3, Flexbox, Grid, and responsive web design.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <div class="card-body">
+                    <h3>Academy Cinemas</h3>
+                    <p>A responsive movie theater website featuring movie listings, showtimes, and an embedded ticket booking form built with Bootstrap 4.</p>
+                    <span class="tag">HTML5 / Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-body">
+                    <h3>One-Page Website</h3>
+                    <p>A clean, single-page landing site designed with smooth scrolling navigation, structured cards, and media embeds.</p>
+                    <span class="tag">HTML5 / CSS3</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-body">
+                    <h3>Simple Recipes</h3>
+                    <p>A culinary recipe showcase highlighting semantic layout structures, CSS styling, typography, and responsive image galleries.</p>
+                    <span class="tag">HTML5 / CSS3</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-body">
+                    <h3>The Pet Shop</h3>
+                    <p>An e-commerce landing prototype featuring clean product cards, navigation, and custom UI components.</p>
+                    <span class="tag">HTML / CSS</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-body">
+                    <h3>Creating CSS Effects</h3>
+                    <p>Interactive animations, transitions, hover effects, and modern CSS UI transformations.</p>
+                    <span class="tag">Advanced CSS</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p>Interested in collaborating or have any questions? Feel free to reach out!</p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Mahroo. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
