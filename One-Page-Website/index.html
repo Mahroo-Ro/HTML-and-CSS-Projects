@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>One Page Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Page Website - Lightbox Gallery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f9;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 8px;
+      color: #333;
+    }
+    p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .column {
+      flex: 1 1 200px;
+      max-width: 230px;
+    }
+    .hover-shadow {
+      transition: 0.3s;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .hover-shadow:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    .modal-content {
+      position: relative;
+      margin: auto;
+      padding: 0;
+      width: 90%;
+      max-width: 800px;
+    }
+    .mySlides {
+      display: none;
+    }
+    .mySlides img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+    .close {
+      color: #fff;
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #bbb;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.3s;
+      border-radius: 4px;
+      user-select: none;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .caption-container {
+      text-align: center;
+      background-color: #111;
+      padding: 12px 16px;
+      color: white;
+      border-radius: 0 0 6px 6px;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is my one page website assignment.</p>
+
+  <h1>Image Gallery</h1>
+  <p>Click on any image to open the Lightbox viewer.</p>
+
+  <!-- Thumbnail Images -->
+  <div class="row">
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&auto=format&fit=crop" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="Mountain Lake">
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&auto=format&fit=crop" onclick="openModal();currentSlide(2)" class="hover-shadow" alt="Foggy Forest">
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&auto=format&fit=crop" onclick="openModal();currentSlide(3)" class="hover-shadow" alt="Sunlit Woods">
+    </div>
+    <div class="column">
+      <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=500&auto=format&fit=crop" onclick="openModal();currentSlide(4)" class="hover-shadow" alt="Green Valley">
+    </div>
+  </div>
+
+  <!-- The Modal/Lightbox -->
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+      <div class="mySlides">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop" alt="Mountain Lake">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&auto=format&fit=crop" alt="Foggy Forest">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&auto=format&fit=crop" alt="Sunlit Woods">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&auto=format&fit=crop" alt="Green Valley">
+      </div>
+
+      <!-- Controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <!-- Caption -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/one_page_website.js"></script>
 </body>
 </html>
